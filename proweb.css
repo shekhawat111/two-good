@@ -1,0 +1,501 @@
+/* CSS Reset */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    background-color: #f3f3f3;
+}
+
+.icon i {}
+
+.nav {
+    width: 100%;
+    /* background-color: antiquewhite; */
+    position: fixed;
+    z-index: 99;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 25px;
+}
+
+.navpart1 {
+    height: 83px;
+    overflow: hidden;
+}
+
+.navpart1 svg {
+    display: block;
+}
+
+.navpart2 {
+    gap: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.icon {
+    padding: 10px;
+    border-radius: 50px;
+    background-color: #f3f3f3;
+}
+
+.links a {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 14px;
+    margin: 0 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.navpart2 .icon i {
+    font-size: 18px;
+    margin: 0 20px;
+    font-weight: 100;
+}
+
+.links {
+    padding: 10px;
+}
+
+.main {}
+
+.page1 {
+    position: relative;
+    width: 100%;
+    padding-top: 20vh;
+    min-height: 100vh;
+    /* background-color: bisque; */
+}
+
+*::selection {
+    background-color: black;
+    color: white;
+}
+
+.page1 h1 {
+    font-size: 14vw;
+    padding: 2vw 3vw;
+    line-height: 8vw;
+    text-transform: uppercase;
+    font-family: Futura;
+    /* overflow: hidden; */
+}
+
+.videosec {
+    width: 100%;
+    height: 100vh;
+    /* background-color: red; */
+    margin-top: 3vw;
+}
+
+.videosec video {
+    width: 100%;
+    height: 100%;
+    padding: 0 0.7vw;
+    object-fit: cover;
+    object-position: center;
+}
+
+.play {
+    border-radius: 50%;
+    scale: 0;
+    font-family: futura;
+    opacity: 0;
+    position: fixed;
+    width: 120px;
+    padding-left: 37px;
+    align-items: center;
+    color: rgb(230, 202, 132);
+    display: flex;
+    height: 120px;
+    background-color: black;
+}
+
+
+/* page2 start from here */
+
+.page2 {
+    width: 100%;
+    min-height: 100vh;
+    /* background-color: bisque; */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 3vw 3vw;
+}
+
+.page2 .elem img {
+    object-fit: cover;
+    width: 100%;
+    scale: 1.2;
+    height: 100%;
+    object-position: center;
+}
+
+.page2 .elem {
+    width: 30%;
+    overflow: hidden;
+    height: 100%;
+    position: relative;
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.dets {
+    width: 310px;
+    height: 7%;
+    border-radius: 50px;
+    position: absolute;
+    background-color: rgb(206, 243, 214);
+    padding: 0 6vw;
+    overflow: hidden;
+    transition: 0.6s;
+}
+
+.dets::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: rgb(211, 163, 163);
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.6s;
+}
+
+.dets:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.dets:hover {
+    height: 35%;
+    padding: 0 7vw;
+}
+
+
+/* responsive code here */
+
+@media(max-width:600px) {
+    .page1 {
+        position: relative;
+        width: 100%;
+        padding-top: 30vh;
+        min-height: 30vh;
+        /* background-color: bisque; */
+    }
+    .page1 h1 {
+        font-size: 14vw;
+        padding: 2vw 5vw;
+        line-height: 9vw;
+        text-transform: uppercase;
+        /* overflow: hidden; */
+    }
+    .videosec {
+        width: 100%;
+        height: 25vh;
+        /* background-color: red; */
+        margin-top: 5vw;
+        overflow: hidden;
+    }
+    .videosec video {
+        width: 100%;
+        height: 100%;
+        padding: 0 5vw;
+        object-fit: cover;
+        object-position: center;
+    }
+    .play {
+        font-family: futura;
+        opacity: 1;
+        scale: 1;
+        left: 50%;
+        top: 80%;
+        transform: translate(-50%, -50%);
+        position: absolute;
+        width: 60px;
+        padding-left: 10px;
+        align-items: center;
+        color: rgb(230, 202, 132);
+        display: flex;
+        height: 60px;
+        background-color: black;
+    }
+    .page2 {
+        width: 100%;
+        min-height: 100vh;
+        /* background-color: bisque; */
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        padding: 6vw 7vw;
+        gap: 1vh;
+    }
+    .page2 .elem img {
+        object-fit: cover;
+        width: 100%;
+        scale: 1.2;
+        height: 100%;
+        object-position: center;
+    }
+    .page2 .elem {
+        width: 100%;
+        overflow: hidden;
+        height: 68vh;
+        /* background-color: red; */
+    }
+    .page3 .child {
+        height: 54vh;
+        /* background-color: red; */
+        width: 88vw;
+        display: flex;
+        padding: 15vw;
+        /* flex-direction: column; */
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        /* Add this to make positioning relative to the parent */
+    }
+    .page3 .child img {
+        object-fit: cover;
+        height: 100%;
+        object-position: center;
+        width: 100%;
+    }
+    .page3 {
+        width: 100%;
+        min-height: 120vh;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: center;
+        background-color: #f3f3f3;
+        position: relative;
+    }
+    /* navbar part from here reso */
+    .nav {
+        width: 100%;
+        /* background-color: antiquewhite; */
+        position: fixed;
+        z-index: 99;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        padding: 15px;
+    }
+    .navpart1 {
+        height: 63px;
+        width: 83px;
+        overflow: hidden;
+    }
+    .navpart1 svg {
+        display: block;
+        height: 63px;
+        padding-top: 20px;
+        width: 83px;
+    }
+    .navpart2 {
+        gap: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .icon {
+        padding: 10px;
+        border-radius: 50px;
+        background-color: #f3f3f3;
+    }
+    .links a {
+        text-transform: uppercase;
+        text-decoration: none;
+        color: #333;
+        font-weight: 500;
+        font-size: 14px;
+        margin: 0 20px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    .navpart2 .icon i {
+        font-size: 18px;
+        margin: 0 20px;
+        font-weight: 100;
+    }
+    .links {
+        padding: 10px;
+        display: none;
+    }
+    /* page 4 frome here */
+    /* page4 from here  */
+    .page4 {
+        border-top: 1px solid rgb(2, 0, 0);
+        width: 100%;
+        height: 120vh;
+        /* background-color: red; */
+    }
+    .page4 .wrap h1 {
+        margin-bottom: 0vh;
+    }
+    .page4 .wrap {
+        width: 100%;
+        height: 60vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* background-color: red; */
+    }
+    .page4 .wrap h1 {
+        font-family: futura;
+        width: 95%;
+        height: 51%;
+        /* background-color: red; */
+        padding-left: 1em;
+        font-size: 1.5em;
+        line-height: 1;
+    }
+    .page4 .wrap.btn {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    .btn button {
+        margin-bottom: 30vh;
+        padding: 1.5em 4em;
+        border: none;
+        background-color: black;
+        color: #fff;
+        border-radius: 200px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    .page4 .btn h5 {
+        margin-bottom: 17vh;
+        /* background-color: red; */
+        font-size: 0.9em;
+        font-weight: 300;
+        line-height: 0.9;
+        color: #433636;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    .page4 .btn h5 {
+        position: absolute;
+    }
+}
+
+.page3 {
+    width: 100%;
+    min-height: 120vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #f3f3f3;
+    position: relative;
+}
+
+.child {
+    height: 51vh;
+    /* background-color: red; */
+    width: 38vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    /* Add this to make positioning relative to the parent */
+}
+
+.child img {
+    object-fit: cover;
+    height: 100%;
+    object-position: center;
+    width: 100%;
+}
+
+.cruser {
+    width: 150px;
+    height: 150px;
+    background-color: aquamarine;
+    border-radius: 50%;
+    position: absolute;
+    mix-blend-mode: difference;
+    transform: translate(-50%, -50%) scale(0);
+    z-index: 1;
+    /* Set a numeric value for z-index */
+}
+
+.flx {
+    display: flex;
+    font-family: futura;
+    font-weight: 100;
+    padding: 0 5px;
+    font-size: 0.8em;
+    color: #897777;
+    justify-content: space-between;
+}
+
+
+/* page4 from here  */
+
+.page4 {
+    border-top: 1px solid rgb(2, 0, 0);
+    width: 100%;
+    height: 120vh;
+    /* background-color: red; */
+}
+
+.wrap {
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: red; */
+}
+
+.wrap h1 {
+    font-family: futura;
+    width: 69%;
+    padding-left: 1em;
+    font-size: 3.9em;
+    line-height: 1;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    margin-top: 1vh;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.btn button {
+    border: none;
+    padding: 1.5em 4em;
+    background-color: black;
+    color: #fff;
+    border-radius: 200px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.btn h5 {
+    margin-top: 2em;
+    font-size: 0.9em;
+    font-weight: 300;
+    line-height: 0.9;
+    color: #433636;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
